@@ -43,7 +43,7 @@ class Executor
         Closure $callback = null,
         $timeout = null
     ) {
-        $process = new Process($this->addPiper($command, $ttyFile), $runDir);
+        $process = new Process::fromShellCommandline($this->addPiper($command, $ttyFile), $runDir);
 
         $process->setTimeout($timeout);
 
